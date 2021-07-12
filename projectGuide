@@ -1,0 +1,156 @@
+# Here is a guide to use  conventions
+
+
+
+
+Points to remember compulsory : 
+
+1. Use Comments in complex logics
+2. Use good variable names 
+
+example : Avoid uidn for user id number  make it descriptive
+example : studentId ,instead of totalPrice make it totalPriceOfCart
+
+
+3. No Function should do more than one task.
+Each function will have only one use not more than that.
+
+
+4. Structure should be followed properly
+
+5. Always push code in your branch obly
+
+6. Avoid CSS use Tailwind when you need css use SCSS module look for example in the code
+
+
+
+
+
+
+##Conditional Statement
+
+// good
+{showButton && (
+  <Button />
+)}
+
+// good
+{showButton && <Button />}
+
+// good
+{someReallyLongConditional
+  && anotherLongConditional
+  && (
+    <Foo
+      superLongParam="bar"
+      anotherSuperLongParam="baz"
+    />
+  )
+}
+
+// good
+{someConditional ? (
+  <Foo />
+) : (
+  <Foo
+    superLongParam="bar"
+    anotherSuperLongParam="baz"
+  />
+)}
+
+
+##Styling
+
+// bad
+<Foo style={{ left: "20px" }} />
+
+// good
+<Foo style={{ left: '20px' }} />
+
+
+
+##Spacing
+
+// bad
+<Foo/>
+
+// very bad
+<Foo                 />
+
+// bad
+<Foo
+ />
+
+// good
+<Foo />
+
+
+##Props
+
+
+// bad
+<Foo
+  UserName="hello"
+  phone_number={12345678}
+/>
+
+// good
+<Foo
+  userName="hello"
+  phoneNumber={12345678}
+  Component={SomeComponent}
+/>
+
+
+
+## Image Tags
+
+
+// bad
+<img src="hello.jpg" />
+
+// good
+<img src="hello.jpg" alt="Me waving hello" />
+
+// good
+<img src="hello.jpg" alt="" />
+
+// good
+<img src="hello.jpg" role="presentation" />
+
+
+// bad
+<img src="hello.jpg" alt="Picture of me waving hello" />
+
+// good
+<img src="hello.jpg" alt="Me waving hello" />
+
+
+
+
+
+
+## Map function
+#### We don’t recommend using indexes for keys if the order of items may change.
+
+
+// bad
+{todos.map((todo, index) =>
+  <Todo
+    {...todo}
+    key={index}
+  />
+)}
+
+// good
+{todos.map(todo => (
+  <Todo
+    {...todo}
+    key={todo.id}
+  />
+))}
+
+
+
+
+
